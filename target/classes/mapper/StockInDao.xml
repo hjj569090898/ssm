@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="legion.dao.StockInDao">
+    <!--<resultMap id="customerMap" type="legion.dao.StockInDao">-->
+        <!--<id column="id" property="id"/>-->
+        <!--<result column="c_name" property="name"/>-->
+        <!--<result column="c_sex" property="sex"/>-->
+        <!--<result column="c_age" property="age"/>-->
+        <!--<result column="c_ceroNo" property="ceroNo"/>-->
+        <!--<result column="c_ceroType" property="ceroType"/>-->
+    <!--</resultMap>-->
+
+    <insert id="addStockIn" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO stockin(num,price,allprice,state,admin,goodsid,applicant,date,reason)
+        VALUES (#{num},#{price},#{allprice},#{state},#{admin},#{goodsid},#{applicant},#{date},#{reason})
+    </insert>
+
+    <select id="listStockIn" resultType="StockIn">
+          SELECT * FROM stockin st left join goods gd on
+          st.goodsid  = gd.id
+          where
+              state LIKE #{state}
+
+           LIMIT #{page},10
+    </select>
+
+    <select id="listallpage" resultType="Integer">
+        select COUNT(*) from stockin
+    </select>
+    
+    <select id="listStockInById" resultType="StockIn">
+        select * from stockin
+        <where>
+            <if test="id!=null">
+                id=#{id}
+            </if>
+        </where>
+    </select>
+
+    <update id="updateStockIn" parameterType="StockIn">
+        update stockin set
+            num = #{num},
+            price = #{price},
+            allprice = #{allprice},
+            goodsid = #{goodsid},
+            applicant = #{applicant},
+            date = #{date},
+            reason = #{reason}
+        where
+            id= #{id}
+    </update>
+    
+    <delete id="deleteStockIn" parameterType="Integer" >
+        delete from stockin where id = #{id}
+    </delete>
+</mapper>

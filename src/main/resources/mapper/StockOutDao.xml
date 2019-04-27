@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="legion.dao.StockOutDao">
+    <!--<resultMap id="customerMap" type="legion.dao.StockInDao">-->
+        <!--<id column="id" property="id"/>-->
+        <!--<result column="c_name" property="name"/>-->
+        <!--<result column="c_sex" property="sex"/>-->
+        <!--<result column="c_age" property="age"/>-->
+        <!--<result column="c_ceroNo" property="ceroNo"/>-->
+        <!--<result column="c_ceroType" property="ceroType"/>-->
+    <!--</resultMap>-->
+
+    <insert id="addStockOut" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO stockout(num,time,state,admin,goodsid,progressid,projectid,applicant,reason)
+        VALUES (#{num},#{time},#{state},#{admin},#{goodsid},#{progressid},#{projectid},#{applicant},#{reason})
+    </insert>
+
+    <select id="listStockOut" resultType="StockOut">
+          SELECT * FROM stockout st
+	LEFT JOIN project p ON st.projectid = p.id
+	LEFT JOIN progress pr ON st.progressid = pr.id
+          where
+              st.state LIKE #{state}
+           LIMIT #{page},10
+    </select>
+
+    <select id="listallpage" resultType="Integer">
+        select COUNT(*) from stockout
+        <if test="state!=null">
+            state=#{state}
+        </if>
+    </select>
+    
+    <select id="listStockOutById" resultType="StockOut">
+        select * from stockout
+        <where>
+            <if test="id!=null">
+                id=#{id}
+            </if>
+        </where>
+    </select>
+
+    <update id="updateStockOut" parameterType="StockOut">
+        update stockout set
+            num = #{num},
+            price = #{price},
+            allprice = #{allprice},
+            goodsid = #{goodsid},
+            applicant = #{applicant},
+            date = #{date},
+            reason = #{reason}
+        where
+            id= #{id}
+    </update>
+    
+    <delete id="deleteStockOut" parameterType="Integer" >
+        delete from stockout where id = #{id}
+    </delete>
+</mapper>

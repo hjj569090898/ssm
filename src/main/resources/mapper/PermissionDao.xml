@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="legion.dao.PermissionDao">
+
+    <select id="listpermission" parameterType="java.lang.String"  resultType="java.lang.String">
+        select permission from permission where 1 =1
+            <if test="username!=null">
+                and userid in (select id from user where username=#{username})
+            </if>
+
+    </select>
+
+    <select id="listgrouppermission" parameterType="java.lang.String"  resultType="java.lang.String">
+        select permission from grouppermission where 1 =1
+
+            <if test="username!=null">
+                and  groupid in (select groupid from user where username=#{username})
+            </if>
+
+    </select>
+</mapper>

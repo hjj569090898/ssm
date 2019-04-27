@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="legion.dao.FinanceDao">
+
+
+    <insert id="addFinance" useGeneratedKeys="true" keyProperty="id">
+          insert into finance(admin,descs,money,linked,date)
+           values(#{admin},#{descs},#{money},#{linked},#{date})
+    </insert>
+
+    <select id="listFinance" resultType="Finance">
+          SELECT * FROM finance where 1 = 1
+        <![CDATA[  and money < #{money}    ]]>
+              <!--<if test="symbol==gte and money !=null">-->
+                  <!--<![CDATA[  and money >=#{money}    ]]>-->
+              <!--</if>-->
+              <!--<if test="symbol==lt and money !=null">-->
+                  <!--<![CDATA[  and money <#{money}    ]]>-->
+              <!--</if>-->
+           LIMIT #{page},10
+    </select>
+
+    <select id="listallpage" resultType="Integer">
+        select COUNT(*) from finance
+    </select>
+    
+    <select id="listFinanceByID" resultType="Finance">
+        select * from finance
+        <where>
+            <if test="id!=null">
+                id=#{id}
+            </if>
+        </where>
+    </select>
+
+    <update id="updateFinance" parameterType="Finance">
+        update finance set
+            admin = #{admin},
+            descs = #{descs},
+            money = #{money},
+            linked = #{linked},
+            date = #{date}
+        where
+            id= #{id}
+    </update>
+    
+    <delete id="deleteFinance" parameterType="Integer" >
+        delete from finance where id = #{id}
+    </delete>
+</mapper>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="legion.dao.GoodsDao">
+    
+    <insert id="addGoods" useGeneratedKeys="true" keyProperty="id">
+        insert into goods(name,number,units,type) values (#{name},#{number},#{units},#{type})
+    </insert>
+
+    <select id="listGoods" resultType="Goods">
+          select * from goods
+    </select>
+    
+    <select id="listGoodsById" resultType="Goods">
+        select * from goods
+        <where>
+            <if test="id!=null">
+                id=#{id}
+            </if>
+        </where>
+    </select>
+
+    <select id="listGoodsByType" resultType="Goods">
+        select * from goods
+        <where>
+            <if test="type!=null">
+                type=#{type}
+            </if>
+        </where>
+    </select>
+
+    <update id="updateGoods" parameterType="Goods">
+        update goods set
+            name = #{name},
+            number = #{number},
+            units = #{units},
+            type = #{type}
+        where
+            id= #{id}
+    </update>
+    
+    <delete id="deleteGoods" parameterType="Integer" >
+        delete from goods where id = #{id}
+    </delete>
+</mapper>
