@@ -16,7 +16,6 @@ public interface ProjectDao {
 
     Project listProjectById(@Param("id") Integer id);
 
-    ArrayList<Project> listProject();
-
+    ArrayList<Project> listProject(@Param("page") Integer page);
 
 }

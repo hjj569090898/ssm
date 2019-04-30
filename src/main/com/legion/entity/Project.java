@@ -10,10 +10,10 @@ import lombok.Data;
 public class Project {
     private Integer id; //
     private String state;
-    private String name;
-    private String plan_start;
-    private String plan_end;
-    private String actual_start;
-    private String actual_end;
+    private String pjname;
+    private String planstart; //计划和实际的时间
+    private String planend;
+    private String actualstart;
+    private String actualend;
     private String leader;  //负责人
 }

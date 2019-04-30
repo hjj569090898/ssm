@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 @JsonInclude(Include.NON_NULL)//属性为空时不序列化
 
+
 @Data
 public class User {
     private Integer id; //工号(子增）

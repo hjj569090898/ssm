@@ -12,33 +12,35 @@ import java.util.List;
 @Service
 @Transactional(readOnly = false)
 public class ProjectServiceimpl implements ProjectService {
+
     @Autowired
     private ProjectDao projectdao;
 
-    @Transactional(readOnly = false)
-    public Integer addGoods(Goods goods){
-        return goodsDao.addGoods(goods);
+    @Override
+    public Integer addProject(Project project) {
+        return projectdao.addProject(project);
     }
 
-    @Transactional(readOnly = false)
-    public Integer updateGoods(Goods goods){
-        return goodsDao.updateGoods(goods);
+    @Override
+    public Integer updateProject(Project project) {
+        return projectdao.updateProject(project);
     }
 
-    public Integer deleteGoods(Integer id){
-        return  goodsDao.deleteGoods(id);
+    @Override
+    public Integer deleteProject(Integer id) {
+        return projectdao.deleteProject(id);
     }
 
-    public Goods listGoodsById(Integer Goodsid){
-        return goodsDao.listGoodsById(Goodsid);
+    @Override
+    public Project listProjectById(Integer Projectid) {
+        return projectdao.listProjectById(Projectid);
     }
 
-    public ArrayList<Goods> listGoods(){
-        return goodsDao.listGoods();
+    @Override
+    public ArrayList<Project> listProject(Integer page) {
+        return projectdao.listProject(page);
     }
 
-    public ArrayList<Goods> listGoodsByType(Integer type)
-    {
-        return goodsDao.listGoodsByType(type);
-    }
+
+
 }
