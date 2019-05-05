@@ -3,8 +3,8 @@
 <mapper namespace="legion.dao.ProjectDao">
     
     <insert id="addProject" useGeneratedKeys="true" keyProperty="id">
-        insert into project(name,state,plan_start,plan_end,actual_statr,actual_end,leader)
-         values (#{name},#{state},#{plan_start},#{plan_end},#{actual_statr},#{actual_end},#{leader})
+        insert into project(pjname,state,planstart,planend,pnow,leader,ctid)
+         values (#{pjname},#{state},#{planstart},#{planend},#{pnow},#{leader},#{ctid})
     </insert>
 
     <select id="listProject" resultType="Project">

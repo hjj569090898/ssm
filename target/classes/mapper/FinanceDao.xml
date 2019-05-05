@@ -10,13 +10,7 @@
 
     <select id="listFinance" resultType="Finance">
           SELECT * FROM finance where 1 = 1
-        <![CDATA[  and money < #{money}    ]]>
-              <!--<if test="symbol==gte and money !=null">-->
-                  <!--<![CDATA[  and money >=#{money}    ]]>-->
-              <!--</if>-->
-              <!--<if test="symbol==lt and money !=null">-->
-                  <!--<![CDATA[  and money <#{money}    ]]>-->
-              <!--</if>-->
+      and type  like #{type}
            LIMIT #{page},10
     </select>
 

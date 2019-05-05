@@ -14,5 +14,7 @@ public interface UserDao {
 
     Integer deleteUser(@Param("id") Integer id);
 
-    ArrayList<User> listUser();
+    ArrayList<User> listUserByGroupid(@Param("groupid") Integer id,@Param("page") Integer page);
+
+    ArrayList<User> listUser(@Param("page") Integer page);
 }

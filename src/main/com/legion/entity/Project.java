@@ -9,6 +9,8 @@ import lombok.Data;
 @Data
 public class Project {
     private Integer id; //
+    private Integer ctid; //合同编号
+    private String pnow;
     private String state;
     private String pjname;
     private String planstart; //计划和实际的时间

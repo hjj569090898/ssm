@@ -12,7 +12,7 @@ public interface FinanceService {
 
     public Finance listFinanceById(Integer id);
 
-    public ArrayList<Finance> listFinance(String symbol,Double money, Integer page);
+    public ArrayList<Finance> listFinance(String type, Integer page);
 
     public Integer listallpage();
 }

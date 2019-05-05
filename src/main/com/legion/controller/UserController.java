@@ -11,6 +11,8 @@ import legion.entity.User;
 import legion.util.JWTUtil;
 import legion.util.PasswordUtil;
 
+import java.util.ArrayList;
+
 @CrossOrigin
 @RestController
 public class UserController {
@@ -84,6 +86,28 @@ public class UserController {
         user.setPassword("******");
         JSONObject obj = new JSONObject();
         obj.put("info",user);
+        return obj;
+    }
+
+    @RequestMapping(value = "/getuserbyg",method = RequestMethod.GET)
+    public JSONObject getalluserbyGroupid(@RequestParam(value= "groupid") Integer groupid,
+                                          @RequestParam(value= "page") Integer page)
+    {
+
+        JSONObject obj = new JSONObject();
+        Integer nowpage = 10*(page-1);
+        ArrayList List = userService.listUserByGroupid(groupid, nowpage);
+        obj.put("user",List);
+        obj.put("length",List.toArray().length);
+        return obj;
+    }
+    @RequestMapping(value = "/getuser",method = RequestMethod.GET)
+    public JSONObject getalluser(@RequestParam(value= "page") Integer page)
+    {
+        JSONObject obj = new JSONObject();
+        Integer nowpage = 10*(page-1);
+        obj.put("user",userService.listUser(nowpage));
+        obj.put("length",obj.size());
         return obj;
     }
 

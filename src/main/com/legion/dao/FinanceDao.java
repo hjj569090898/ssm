@@ -14,8 +14,7 @@ public interface FinanceDao {
 
     Finance listFinanceByID(@Param("id") Integer id);
 
-    ArrayList<Finance> listFinance(@Param("symbol") String symbol,
-                                   @Param("state") Double money,@Param("page") Integer page);
+    ArrayList<Finance> listFinance(@Param("type") String type,@Param("page") Integer page);
 
     Integer listallpage();
 

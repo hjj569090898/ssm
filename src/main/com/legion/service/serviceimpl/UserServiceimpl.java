@@ -33,7 +33,12 @@ public class UserServiceimpl implements UserService {
         return userDao.listUserByName(username);
     }
 
-    public ArrayList<User> listUser(){
-    return userDao.listUser();
+    public ArrayList<User> listUserByGroupid(Integer id,Integer page){
+    return userDao.listUserByGroupid(id,page);
+    }
+
+    @Override
+    public ArrayList<User> listUser(Integer page) {
+        return userDao.listUser(page);
     }
 }

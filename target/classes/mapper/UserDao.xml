@@ -7,8 +7,15 @@
          values (#{username},#{password},#{birthday},#{credit},#{mobile},#{email},#{name},#{groupid});
     </insert>
 
+    <select id="listUserByGroupid" resultType="User">
+          select * from user where 1 = 1
+      and groupid  = #{groupid}
+           LIMIT #{page},10
+    </select>
+
     <select id="listUser" resultType="User">
-          select * from user
+          select * from user where 1 = 1
+           LIMIT #{page},10
     </select>
 
     <select id="listUserByName" resultType="User">

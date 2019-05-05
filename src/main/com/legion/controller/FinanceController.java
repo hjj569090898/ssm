@@ -1,5 +1,6 @@
 package legion.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import legion.entity.Finance;
 import legion.service.FinanceService;
 import org.springframework.web.bind.annotation.*;
@@ -22,13 +23,18 @@ public class FinanceController {
     }
 
     @RequestMapping(value = "/finance",method = RequestMethod.GET)
-    public ArrayList listFinance(@RequestParam(value = "symbol")String symbol,
-                                 @RequestParam(value = "money")Double money,
-                                 @RequestParam(value = "page")Integer page){
+    public JSONObject listFinance(@RequestParam(value = "type")String type,
+                                  @RequestParam(value = "page")Integer page){
+        if(type ==null || type.equals(""))
+        {
+            type = "%%";
+        }
         Integer nowpage = 10*(page-1);
-        ArrayList<Finance> list = new ArrayList<>();
-        list = financeService.listFinance(symbol, money,nowpage);
-        return list;
+        ArrayList<Finance> list = financeService.listFinance(type,nowpage);
+        JSONObject object = new JSONObject();
+        object.put("Fiance",list);
+        object.put("length",list.toArray().length);
+        return object;
     }
     @RequestMapping(value = "/finance",method = RequestMethod.POST)
     public Integer addFinance(@RequestBody Finance finance ){

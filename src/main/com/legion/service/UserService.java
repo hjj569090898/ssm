@@ -12,5 +12,7 @@ public interface UserService {
 
     User listUserByName(String username);
 
-    ArrayList<User> listUser();
+    ArrayList<User> listUserByGroupid(Integer id,Integer page);
+
+    ArrayList<User> listUser(Integer page);
 }

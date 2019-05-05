@@ -10,6 +10,6 @@ public class Finance {
     private String admin;
     private String descs;
     private Double money;
-    private Integer linked;
+    private Integer type;
     private String date;
 }
