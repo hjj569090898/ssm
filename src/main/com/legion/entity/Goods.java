@@ -11,5 +11,7 @@ public class Goods {
     private int number;
     private String units;
     private int type;
-
+    private int latelynum;
+    private String latelydate;
+    private String admin;
 }

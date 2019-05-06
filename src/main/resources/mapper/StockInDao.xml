@@ -29,10 +29,11 @@
     </select>
     
     <select id="listStockInById" resultType="StockIn">
-        select * from stockin
+        SELECT * FROM stockin st left join goods gd on
+        st.goodsid  = gd.id
         <where>
             <if test="id!=null">
-                id=#{id}
+                st.id=#{id}
             </if>
         </where>
     </select>
@@ -45,6 +46,7 @@
             goodsid = #{goodsid},
             applicant = #{applicant},
             date = #{date},
+            state = #{state},
             reason = #{reason}
         where
             id= #{id}

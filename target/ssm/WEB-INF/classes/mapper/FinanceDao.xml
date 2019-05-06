@@ -4,8 +4,8 @@
 
 
     <insert id="addFinance" useGeneratedKeys="true" keyProperty="id">
-          insert into finance(admin,descs,money,linked,date)
-           values(#{admin},#{descs},#{money},#{linked},#{date})
+          insert into finance(admin,descs,money,type,date)
+           values(#{admin},#{descs},#{money},#{type},#{date})
     </insert>
 
     <select id="listFinance" resultType="Finance">

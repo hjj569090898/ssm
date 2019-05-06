@@ -33,7 +33,10 @@
             name = #{name},
             number = #{number},
             units = #{units},
-            type = #{type}
+            type = #{type},
+            latelynum = #{latelynum},
+            latelydate  = #{latelydate},
+            admin = #{admin}
         where
             id= #{id}
     </update>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="legion.dao.AuditingDao">
+
+
+    <insert id="add" useGeneratedKeys="true" keyProperty="id">
+          insert into auditing(linked,reason,money,type,date,applicant,state)
+           values(#{linked},#{reason},#{money},#{type},#{date},#{applicant},#{state})
+    </insert>
+
+    <select id="ListAuditing" resultType="auditing">
+          SELECT * FROM auditing where 1 = 1
+      and type  like #{type} and state like #{state}
+           LIMIT #{page},10
+    </select>
+
+    <select id="QueryAuditing" resultType="auditing">
+        select * from auditing
+        <where>
+            <if test="id!=null">
+                id=#{id}
+            </if>
+        </where>
+    </select>
+
+    <update id="update" parameterType="Auditing">
+        update auditing set
+            admin = #{admin},
+            advice = #{advice},
+            state = #{state},
+            adate = #{adate}
+        where
+            id= #{id}
+    </update>
+
+</mapper>
