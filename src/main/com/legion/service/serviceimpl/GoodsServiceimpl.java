@@ -2,6 +2,7 @@ package legion.service.serviceimpl;
 
 import legion.dao.GoodsDao;
 import legion.entity.Goods;
+import legion.entity.GoodsFlow;
 import legion.service.GoodsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -41,5 +42,15 @@ public class GoodsServiceimpl implements GoodsService {
     public ArrayList<Goods> listGoodsByType(Integer type)
     {
         return goodsDao.listGoodsByType(type);
+    }
+
+    @Override
+    public Integer addGoodsflow(Integer goodsid, Integer num, String date, String admin, String descs) {
+        return goodsDao.addGoodsflow(goodsid,num,date,admin,descs);
+    }
+
+    @Override
+    public ArrayList<GoodsFlow> listGoodsflow(Integer page) {
+        return goodsDao.listGoodsflow(page);
     }
 }

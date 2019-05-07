@@ -6,10 +6,21 @@
         insert into goods(name,number,units,type) values (#{name},#{number},#{units},#{type})
     </insert>
 
+    <insert id="addGoodsflow" useGeneratedKeys="true" keyProperty="id">
+        insert into goodsflow(goodsid,num,date,admin,descs) values (#{goodsid},#{num},#{date},#{admin},#{descs})
+    </insert>
+
+
     <select id="listGoods" resultType="Goods">
           select * from goods
     </select>
-    
+
+    <select id="listGoodsflow" resultType="GoodsFlow">
+          SELECT * FROM goodsflow
+
+           LIMIT #{page},10
+    </select>
+
     <select id="listGoodsById" resultType="Goods">
         select * from goods
         <where>

@@ -28,10 +28,11 @@ public class ProjectController {
         Integer nowpage = 10*(page-1);
         JSONObject object = new JSONObject();
         ArrayList List = projectService.listProject(nowpage);
-        object.put("Project",List);
-        object.put("page",List.toArray().length);
+        object.put("progress", projectService.listProject(nowpage));
+        object.put("length",List.toArray().length);
         return object;
     }
+
     @RequestMapping(value = "/project",method = RequestMethod.POST)
     public Integer addProject(@RequestBody Project project ){
         return projectService.addProject(project);

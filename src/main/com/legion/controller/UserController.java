@@ -101,6 +101,7 @@ public class UserController {
         obj.put("length",List.toArray().length);
         return obj;
     }
+
     @RequestMapping(value = "/getuser",method = RequestMethod.GET)
     public JSONObject getalluser(@RequestParam(value= "page") Integer page)
     {
@@ -110,6 +111,7 @@ public class UserController {
         obj.put("length",obj.size());
         return obj;
     }
+
 
 }
 //            Subject subject = SecurityUtils.getSubject();

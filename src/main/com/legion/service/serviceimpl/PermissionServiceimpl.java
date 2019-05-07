@@ -1,11 +1,13 @@
 package legion.service.serviceimpl;
 
 import legion.dao.PermissionDao;
+import legion.entity.Permission;
 import legion.service.PermissionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -23,6 +25,13 @@ public class PermissionServiceimpl implements PermissionService {
         return permissionDao.listgrouppermission(username);
     }
 
+    @Override
+    public ArrayList<Permission> userper(String username) {
+        return permissionDao.userper(username);
+    }
 
-
+    @Override
+    public ArrayList<Permission> usergroupper(String username) {
+        return permissionDao.usergroupper(username);
+    }
 }

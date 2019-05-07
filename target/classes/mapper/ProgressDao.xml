@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="legion.dao.ProgressDao">
+    
+    <insert id="addProgress" useGeneratedKeys="true" keyProperty="id">
+        insert into progress(prname,planstart,planend,actualstart,actualend,plancost,actualcost,
+        planworking,actualworking,subcontractcost,state,projectid,admin,date,percent)
+         values (#{prname},#{planstart},#{planend},#{actualstart},#{actualend},#{plancost},
+         #{actualcost},#{planworking},#{actualworking},#{subcontractcost},#{state},#{projectid},
+         #{admin},#{date},#{percent})
+    </insert>
+
+    <select id="listProgress" resultType="Progress">
+          select * from progress
+          where projectid = #{projectid}
+           LIMIT #{page},10
+
+    </select>
+    
+    <select id="listProgressById" resultType="Progress">
+        select * from progress
+        <where>
+            <if test="id!=null">
+                id=#{id} and projectid = #{projectid}
+            </if>
+        </where>
+    </select>
+
+
+    <update id="updateProgress" parameterType="Progress">
+        update progress set
+            name = #{name},
+            state = #{state},
+            plan_start = #{plan_start},
+            plan_end = #{plan_start},
+            leader = #{leader},
+            actual_statr = #{actual_statr},
+            actual_end = #{actual_end}
+        where
+            id= #{id}
+    </update>
+    
+    <delete id="deleteProgress" parameterType="Integer" >
+        delete from progress where id = #{id}
+    </delete>
+</mapper>

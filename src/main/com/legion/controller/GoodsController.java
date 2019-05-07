@@ -2,6 +2,7 @@ package legion.controller;
 
 import legion.entity.Goods;
 
+import legion.entity.GoodsFlow;
 import legion.service.GoodsService;
 
 import org.springframework.web.bind.annotation.*;
@@ -31,10 +32,16 @@ public class GoodsController {
         return list;
     }
 
+    @RequestMapping(value = "/goodsflow",method = RequestMethod.GET)
+    public ArrayList goodsflow(@RequestParam(value = "page")Integer page){
+        int nowpage = (page-1)*10;
+        ArrayList<GoodsFlow> list = goodsService.listGoodsflow(nowpage);
+        return  list;
+    }
+
     @RequestMapping(value = "/goods",method = RequestMethod.GET)
     public ArrayList listgood(){
-        ArrayList<Goods> list = new ArrayList<>();
-        list = goodsService.listGoods();
+        ArrayList<Goods> list = goodsService.listGoods();
         return list;
     }
     @RequestMapping(value = "/goods",method = RequestMethod.POST)

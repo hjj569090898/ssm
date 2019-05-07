@@ -18,4 +18,24 @@
             </if>
 
     </select>
+
+    <select id="userper"  resultType="Permission">
+        select p.id,p.userid,p.permission,pinfo.name from permission p
+        left join permissioninfo pinfo on p.permission = pinfo.permiss where 1 =1
+        <if test="username!=null">
+            and userid in (select id from user where username=#{username})
+        </if>
+
+    </select>
+
+    <select id="usergroupper"   resultType="Permission">
+        select p.id,p.groupid,p.permission,pinfo.name from grouppermission p
+        left join permissioninfo pinfo on p.permission = pinfo.permiss
+         where 1 =1
+        <if test="username!=null">
+            and  groupid in (select groupid from user where username=#{username})
+        </if>
+
+    </select>
+
 </mapper>

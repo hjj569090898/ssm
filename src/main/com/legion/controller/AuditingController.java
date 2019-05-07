@@ -68,9 +68,9 @@ public class AuditingController {
              Auditing auditing = auditingService.QueryAuditing(id);
              finance.setAdmin(auditing.getAdmin());
              finance.setMoney(auditing.getMoney());
-             finance.setDate(auditing.getDate());
+             finance.setDate(auditing.getAdate());
              finance.setType(auditing.getType());
-             finance.setDescs("原因" + auditing.getReason() + " 建议 " + auditing.getAdvice());
+             finance.setDescs("申请原因:"+auditing.getReason());
              StockIn stockIn =stockInService.listStockInById(auditing.getLinked());
              stockIn.setState("申请通过");
              //审核通过  1.更新审核单状态------2更新入库订单申请单----3更新财务流水---4更新库存
@@ -87,6 +87,10 @@ public class AuditingController {
              }
              else if(goodsService.updateGoods(goods)==0)
              {
+                 throw new RuntimeException();
+             }
+             else if(goodsService.addGoodsflow(stockIn.getGoodsid(),stockIn.getNum(),
+                     auditing.getAdate(),stockIn.getApplicant(),stockIn.getReason())==0){
                  throw new RuntimeException();
              }
          }
