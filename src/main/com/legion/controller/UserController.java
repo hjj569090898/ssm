@@ -112,6 +112,14 @@ public class UserController {
         return obj;
     }
 
+        @RequestMapping(value = "/updateinfo",method = RequestMethod.PATCH)
+    public JSONObject getalluser(@RequestBody User user)
+    {
+        JSONObject obj =new JSONObject();
+        obj.put("code",userService.updateUser(user));
+        return obj;
+    }
+
 
 }
 //            Subject subject = SecurityUtils.getSubject();

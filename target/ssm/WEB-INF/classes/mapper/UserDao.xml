@@ -28,13 +28,15 @@
     </select>
 
     <update id="updateUser" parameterType="User">
---         update user set
---             name = #{name},
---             num = #{num},
---             units = #{units},
---             type = #{type}
---         where
---             id= #{id}
+        update user set
+            birthday = #{birthday},
+            credit = #{credit},
+            name = #{name},
+            mobile = #{mobile},
+            groupid = #{groupid},
+            email = #{email}
+        where
+            id = #{id}
     </update>
 
     <delete id="deleteUser" parameterType="Integer" >
