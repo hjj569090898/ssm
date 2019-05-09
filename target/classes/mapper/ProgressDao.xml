@@ -16,6 +16,12 @@
            LIMIT #{page},10
 
     </select>
+
+    <select id="listProgoods" resultType="ProGoods">
+          select * from progressgoods
+          where projectid = #{projectid}
+           LIMIT #{page},10
+    </select>
     
     <select id="listProgressById" resultType="Progress">
         select * from progress

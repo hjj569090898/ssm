@@ -1,6 +1,7 @@
 package legion.service.serviceimpl;
 
 import legion.dao.ProgressDao;
+import legion.entity.ProGoods;
 import legion.entity.Progress;
 import legion.service.ProgressService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,5 +41,10 @@ public class ProgressServiceimpl implements ProgressService {
     @Override
     public ArrayList<Progress> listProgress(Integer Projectid,Integer page) {
         return progressDao.listProgress(Projectid, page);
+    }
+
+    @Override
+    public ArrayList<ProGoods> listProgoods(Integer Projectid, Integer page) {
+        return progressDao.listProgoods(Projectid, page);
     }
 }

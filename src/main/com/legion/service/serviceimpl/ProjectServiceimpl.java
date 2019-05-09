@@ -2,6 +2,7 @@ package legion.service.serviceimpl;
 
 import legion.dao.ProjectDao;
 import legion.entity.Project;
+import legion.entity.ProjectCount;
 import legion.service.ProjectService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -41,6 +42,8 @@ public class ProjectServiceimpl implements ProjectService {
         return projectdao.listProject(page);
     }
 
-
-
+    @Override
+    public ProjectCount listProjectCount(Integer projectid) {
+        return projectdao.listProjectCount(projectid);
+    }
 }

@@ -1,5 +1,6 @@
 package legion.dao;
 
+import legion.entity.ProGoods;
 import legion.entity.Progress;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
@@ -19,5 +20,7 @@ public interface ProgressDao {
     ArrayList<Progress> listProgress(@Param("projectid") Integer projectid,@Param("page") Integer page);
 
     //汇总统计
+
+    ArrayList<ProGoods> listProgoods(@Param("projectid") Integer projectid,@Param("page") Integer page);
 
 }

@@ -1,6 +1,7 @@
 package legion.dao;
 
 import legion.entity.Project;
+import legion.entity.ProjectCount;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
@@ -17,5 +18,7 @@ public interface ProjectDao {
     Project listProjectById(@Param("id") Integer id);
 
     ArrayList<Project> listProject(@Param("page") Integer page);
+
+    ProjectCount listProjectCount(@Param("projectid") Integer projectid);
 
 }

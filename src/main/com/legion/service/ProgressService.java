@@ -1,4 +1,5 @@
 package legion.service;
+import legion.entity.ProGoods;
 import legion.entity.Progress;
 
 import java.util.ArrayList;
@@ -14,5 +15,7 @@ public interface ProgressService {
 
      ArrayList<Progress> listProgress(Integer Projectid,Integer page);
 
+
+     ArrayList<ProGoods> listProgoods(Integer Projectid,Integer page);
 //    public ArrayList<Project>listGoodsByType(Integer type);
 }
