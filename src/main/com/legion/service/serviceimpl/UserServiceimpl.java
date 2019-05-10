@@ -1,6 +1,7 @@
 package legion.service.serviceimpl;
 
 import legion.dao.UserDao;
+import legion.entity.Userapply;
 import legion.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -40,5 +41,26 @@ public class UserServiceimpl implements UserService {
     @Override
     public ArrayList<User> listUser(Integer page) {
         return userDao.listUser(page);
+    }
+
+
+    @Override
+    public Integer addUserapply(Userapply userapply) {
+        return userDao.addUserapply(userapply);
+    }
+
+    @Override
+    public Integer updateUserapply(Userapply userapply) {
+        return userDao.updateUserapply(userapply);
+    }
+
+    @Override
+    public Integer audiUserapply(Integer id,String state, String audidate) {
+        return userDao.audiUserapply(id,state,audidate);
+    }
+
+    @Override
+    public ArrayList<Userapply> listuserapply(String username) {
+        return userDao.listuserapply(username);
     }
 }

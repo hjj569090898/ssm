@@ -7,11 +7,25 @@
          values (#{pjname},#{state},#{planstart},#{planend},#{actualstart},#{actualend},#{pnow},#{leader},#{ctid})
     </insert>
 
+    <insert id="addimageurl" useGeneratedKeys="true" keyProperty="id">
+        insert into pimage(projectid,imageurl)
+         values (#{projectid},#{imageurl})
+    </insert>
+
     <select id="listProject" resultType="Project">
           select * from project
            LIMIT #{page},10
     </select>
-    
+
+    <select id="listimageurl" parameterType="java.lang.String"  resultType="java.lang.String">
+        select imageurl from pimage
+        <where>
+        <if test="projectid!=null">
+            projectid = #{projectid}
+        </if>
+        </where>
+    </select>
+
     <select id="listProjectById" resultType="Project">
         select * from project
         <where>

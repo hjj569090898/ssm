@@ -18,5 +18,9 @@ public interface ProjectService {
 
      ProjectCount listProjectCount(Integer projectid);
 
+     List listimageurl(Integer projectid);
+
+     Integer addimageurl(Integer projectid,String imageurl);
+
 //    public ArrayList<Project>listGoodsByType(Integer type);
 }

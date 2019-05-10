@@ -46,4 +46,14 @@ public class ProjectServiceimpl implements ProjectService {
     public ProjectCount listProjectCount(Integer projectid) {
         return projectdao.listProjectCount(projectid);
     }
+
+    @Override
+    public List listimageurl(Integer projectid) {
+        return projectdao.listimageurl(projectid);
+    }
+
+    @Override
+    public Integer addimageurl(Integer projectid, String imageurl) {
+        return projectdao.addimageurl(projectid,imageurl);
+    }
 }

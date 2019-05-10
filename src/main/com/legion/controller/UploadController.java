@@ -1,13 +1,14 @@
 package legion.controller;
 
+import com.alibaba.fastjson.JSONObject;
+import legion.service.ProjectService;
 import legion.util.UploadUtil;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -16,6 +17,9 @@ import java.util.Map;
 
 @Controller
 public class UploadController {
+
+    @Resource
+    private ProjectService projectService;
 
     @PostMapping("/avatar")
     @ResponseBody
@@ -36,21 +40,32 @@ public class UploadController {
         return map;
     }
 
-    @PostMapping("/upload")
+    @Transactional
+    @PostMapping("/upload/{id}")
     @ResponseBody
     public Map upload(@RequestParam("file") MultipartFile[] files, HttpServletRequest request,
-                      @RequestParam(value = "id" )Integer id){
+                      @PathVariable Integer id){
+
+
         Map<String,Object> map  =new HashMap<String, Object>();
         String path = request.getSession().getServletContext().getRealPath("\\progressimage\\");
-        String path2 = "C:\\legion\\src\\assets\\pimage";
+        String path2 = "C:\\legion\\static\\image";
+
         try {
-//            ArrayList<String>  list = UploadUtil.upload(files, path, id);
-            map.put("code",0);
-            map.put("imagelist",UploadUtil.upload(files, path2, id));
+            String url = "./static/image"+UploadUtil.upload(files, path2, id);
+            Integer a = projectService.addimageurl(id,url);
+            map.put("code",a);
         }catch (IOException e){
-            map.put("code",1);
-            e.printStackTrace();
+
         }
         return map;
+    }
+
+    @GetMapping("/getimage")
+    @ResponseBody
+    public JSONObject geiimage(@RequestParam("projectid") Integer projectid){
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("url",projectService.listimageurl(projectid));
+        return jsonObject;
     }
 }

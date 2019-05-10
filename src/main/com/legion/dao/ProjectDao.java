@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Repository
 public interface ProjectDao {
@@ -21,4 +22,7 @@ public interface ProjectDao {
 
     ProjectCount listProjectCount(@Param("projectid") Integer projectid);
 
+    List listimageurl(@Param("projectid") Integer projectid);
+
+    Integer addimageurl(@Param("projectid") Integer projectid,@Param("imageurl") String imageurl);
 }

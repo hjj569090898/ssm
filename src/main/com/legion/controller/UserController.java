@@ -1,8 +1,14 @@
 package legion.controller;
 
 import com.alibaba.fastjson.JSONObject;
+import legion.entity.Auditing;
+import legion.entity.Userapply;
+import legion.service.AuditingService;
 import legion.service.UserService;
+import  java.util.Date;
+import java.text.SimpleDateFormat;
 
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import javax.annotation.Resource;
 
@@ -18,6 +24,8 @@ import java.util.ArrayList;
 public class UserController {
     @Resource
     private UserService userService;
+    @Resource
+    private AuditingService auditingService;
 
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
@@ -117,6 +125,54 @@ public class UserController {
     {
         JSONObject obj =new JSONObject();
         obj.put("code",userService.updateUser(user));
+        return obj;
+    }
+
+
+    @Transactional
+    @RequestMapping(value = "/userapply",method = RequestMethod.POST)
+            public Integer adduserapply(@RequestBody Userapply userapply)
+    {
+        Date startday = new Date();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        String cday = sdf.format(startday);
+
+        Auditing auditing = new Auditing();
+        auditing.setReason(userapply.getReason());
+        auditing.setType("个人");
+        auditing.setApplicant(userapply.getDate());
+        auditing.setMoney(userapply.getMoney());
+        auditing.setState("审核中");
+        auditing.setDate(cday);
+        userapply.setDate(cday);
+
+         if(userService.addUserapply(userapply)==0){
+             throw new RuntimeException();
+         }
+         else
+         {
+             auditing.setLinked(userapply.getId());
+             if(auditingService.add(auditing)==0) {
+                 throw new RuntimeException();
+             }
+         }
+         return 1;
+    }
+
+
+
+    @RequestMapping(value = "/userapply",method =RequestMethod.PATCH)
+    public Integer updateuserapply(@RequestBody Userapply userapply)
+    {
+        return  userService.updateUserapply(userapply);
+    }
+
+    @RequestMapping(value = "/userapply",method = RequestMethod.GET)
+    public JSONObject getuserapply(@RequestParam(value= "username") String  username)
+    {
+        JSONObject obj = new JSONObject();
+        obj.put("userapply",userService.listuserapply(username));
+        obj.put("length",obj.size());
         return obj;
     }
 

@@ -7,6 +7,12 @@
          values (#{username},#{password},#{birthday},#{credit},#{mobile},#{email},#{name},#{groupid});
     </insert>
 
+
+    <insert id="addUserapply" useGeneratedKeys="true" keyProperty="id">
+        insert into userapply(userid,money,state,date,reason,audidate)
+         values (#{userid},#{money},#{state},#{date},#{reason},#{audidate});
+    </insert>
+
     <select id="listUserByGroupid" resultType="User">
           select * from user where 1 = 1
       and groupid  = #{groupid}
@@ -16,6 +22,14 @@
     <select id="listUser" resultType="User">
           select * from user where 1 = 1
            LIMIT #{page},10
+    </select>
+
+
+
+    <select id="listuserapply" resultType="userapply">
+          select * from userapply where
+          userid = (select id from user where username= #{username} )
+
     </select>
 
     <select id="listUserByName" resultType="User">
@@ -42,4 +56,23 @@
     <delete id="deleteUser" parameterType="Integer" >
         delete from user where id = #{id}
     </delete>
+
+    <update id="updateUserapply" parameterType="Userapply">
+        update userapply set
+            money = #{money},
+            date = #{date},
+            reason = #{reason}
+        where
+            id = #{id}
+    </update>
+
+    <update id="audiUserapply" parameterType="Userapply">
+        update userapply set
+            state = #{state},
+            audidate = #{audidate}
+        where
+            id = #{id}
+    </update>
+
+
 </mapper>

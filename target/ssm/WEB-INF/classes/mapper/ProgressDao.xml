@@ -18,7 +18,9 @@
     </select>
 
     <select id="listProgoods" resultType="ProGoods">
-          select * from progressgoods
+          select a.id,a.goodsid,b.name ,a.plannum,a.actualnum,a.date
+          from progressgoods a LEFT JOIN goods b
+            on a.goodsid = b.id
           where projectid = #{projectid}
            LIMIT #{page},10
     </select>
