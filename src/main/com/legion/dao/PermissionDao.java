@@ -16,4 +16,7 @@ public interface PermissionDao {
 
     ArrayList<Permission> usergroupper(@Param("username") String username);
 
+    Integer addpermisssion(@Param("permission") String permission,@Param("userid") Integer userid );
+
+    Integer deletepermission(@Param("userid") Integer userid);
 }

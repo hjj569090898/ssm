@@ -18,7 +18,7 @@
     </select>
 
     <select id="listProgoods" resultType="ProGoods">
-          select a.id,a.goodsid,b.name ,a.plannum,a.actualnum,a.date
+          select a.id,a.goodsid,b.name as name,a.plannum,a.actualnum,a.applynum,a.date
           from progressgoods a LEFT JOIN goods b
             on a.goodsid = b.id
           where projectid = #{projectid}
@@ -44,6 +44,24 @@
             leader = #{leader},
             actual_statr = #{actual_statr},
             actual_end = #{actual_end}
+        where
+            id= #{id}
+    </update>
+
+    <update id="newaddgoods" parameterType="ProGoods">
+        update progressgoods set
+        actualnum = #{actualnum},
+        applynum = #{applynum},
+        date = #{date}
+        where
+            id= #{id}
+    </update>
+
+    <update id="deleteprojectgoods" parameterType="ProGoods">
+        update progressgoods set
+        actualnum = #{actualnum},
+        applynum = #{applynum},
+        date = #{date}
         where
             id= #{id}
     </update>

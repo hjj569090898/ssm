@@ -8,12 +8,12 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 @Data
 public class GoodsApply {   //工程统计
     private Integer id; //编号
-    private Integer goodsid; //工程编号
-    private Double applynum;
-    private int progressid;
+    private Integer goodsid;
+    private Integer applynum;
+    private int projectid;
     private String  reason;
     private String state;
     private String date;
-    private String applicant;
-
+    private String admin;
+    private Integer progoodsid; //申请编号的id
 }

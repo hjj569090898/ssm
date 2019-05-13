@@ -14,4 +14,8 @@ public interface PermissionService {
     ArrayList<Permission> userper(String username);
 
     ArrayList<Permission> usergroupper(String username);
+
+    Integer addpermission(String permission,Integer userid);
+
+    Integer deletepermission(Integer userid);
 }

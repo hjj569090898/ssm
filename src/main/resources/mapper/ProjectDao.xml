@@ -3,8 +3,8 @@
 <mapper namespace="legion.dao.ProjectDao">
     
     <insert id="addProject" useGeneratedKeys="true" keyProperty="id">
-        insert into project(pjname,state,planstart,planend,actualstart,actualend,pnow,leader,ctid)
-         values (#{pjname},#{state},#{planstart},#{planend},#{actualstart},#{actualend},#{pnow},#{leader},#{ctid})
+        insert into project(pjname,state,planstart,planend,actualstart,actualend,pnow,leader,money)
+         values (#{pjname},#{state},#{planstart},#{planend},#{actualstart},#{actualend},#{pnow},#{leader},#{money})
     </insert>
 
     <insert id="addimageurl" useGeneratedKeys="true" keyProperty="id">
@@ -12,9 +12,31 @@
          values (#{projectid},#{imageurl})
     </insert>
 
+    <insert id="addprojectgoodsplan" useGeneratedKeys="true" keyProperty="id">
+        insert into progressgoods(goodsid,plannum,actualnum,applynum,projectid,date)
+         values (#{goodsid},#{plannum},#{actualnum},#{applynum},#{projectid},#{date})
+    </insert>
+
+    <insert id="addprojectgoodsapply" useGeneratedKeys="true" keyProperty="id">
+        insert into goodsapply(goodsid,applynum,projectid,reason,date,state,progoodsid)
+         values (#{goodsid},#{applynum},#{projectid},#{reason},#{date},#{state},#{progoodsid})
+    </insert>
+
+
+
     <select id="listProject" resultType="Project">
           select * from project
            LIMIT #{page},10
+    </select>
+
+
+    <select id="findprogoods" resultType="ProGoods">
+          select * from progressgoods
+        <where>
+            <if test="id!=null">
+                id = #{id}
+            </if>
+        </where>
     </select>
 
     <select id="listimageurl" parameterType="java.lang.String"  resultType="java.lang.String">
@@ -46,11 +68,28 @@
             leader = #{leader},
             actualstart = #{actualstart},
             actualend = #{actualend},
-            ctid = #{ctid}
+            money = #{money}
         where
             id= #{id}
     </update>
-    
+
+
+    <update id="updategoodsapply" parameterType="GoodsApply">
+        update goodsapply set
+            state = #{state},
+            admin = #{admin}
+        where
+            id= #{id}
+    </update>
+
+    <update id="updateprogressgoods" parameterType="ProGoods">
+        update progressgoods set
+            applynum = #{applynum},
+            actualnum = #{actualnum}
+        where
+            id= #{id}
+    </update>
+
     <delete id="deleteProject" parameterType="Integer" >
         delete from project where id = #{id}
     </delete>

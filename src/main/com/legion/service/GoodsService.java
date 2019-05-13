@@ -1,5 +1,6 @@
 package legion.service;
 import legion.entity.Goods;
+import legion.entity.GoodsApply;
 import legion.entity.GoodsFlow;
 
 import java.util.ArrayList;
@@ -21,4 +22,8 @@ public interface GoodsService {
      Integer addGoodsflow(Integer goodsid,Integer num, String date,String admin,String descs );
 
      ArrayList<GoodsFlow> listGoodsflow(Integer page);
+
+     ArrayList<GoodsApply> listGoodsApply(Integer page);
+
+     Integer goodsapplynum();
 }

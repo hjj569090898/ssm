@@ -5,6 +5,7 @@ import legion.entity.Progress;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 @Repository
@@ -22,5 +23,9 @@ public interface ProgressDao {
     //汇总统计
 
     ArrayList<ProGoods> listProgoods(@Param("projectid") Integer projectid,@Param("page") Integer page);
+
+    Integer newaddgoods (ProGoods proGoods);
+
+    Integer deleteprojectgoods(ProGoods proGoods);
 
 }

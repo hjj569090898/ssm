@@ -6,11 +6,13 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 
 @Data
-public class ProGoods {   //工程统计
+public class ProGoods {   //工程物资
     private Integer id; //编号
     private Integer projectid; //工程编号
-    private Double plannum;
-    private Double actualnum;
+    private int plannum;
+    private int actualnum;
+    private int applynum;
     private int goodsid;
+    private String name;
     private String date;
 }

@@ -34,4 +34,14 @@ public class PermissionServiceimpl implements PermissionService {
     public ArrayList<Permission> usergroupper(String username) {
         return permissionDao.usergroupper(username);
     }
+
+    @Override
+    public Integer addpermission(String permission, Integer userid) {
+        return permissionDao.addpermisssion(permission,userid);
+    }
+
+    @Override
+    public Integer deletepermission(Integer userid) {
+        return permissionDao.deletepermission(userid);
+    }
 }

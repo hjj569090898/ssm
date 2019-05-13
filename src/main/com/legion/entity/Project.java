@@ -9,7 +9,7 @@ import lombok.Data;
 @Data
 public class Project {
     private Integer id; //
-    private Integer ctid; //合同编号
+    private float money;
     private String pnow;
     private String state;
     private String pjname;

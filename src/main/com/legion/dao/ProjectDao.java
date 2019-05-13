@@ -1,5 +1,7 @@
 package legion.dao;
 
+import legion.entity.GoodsApply;
+import legion.entity.ProGoods;
 import legion.entity.Project;
 import legion.entity.ProjectCount;
 import org.apache.ibatis.annotations.Param;
@@ -25,4 +27,14 @@ public interface ProjectDao {
     List listimageurl(@Param("projectid") Integer projectid);
 
     Integer addimageurl(@Param("projectid") Integer projectid,@Param("imageurl") String imageurl);
+
+    Integer addprojectgoodsplan(ProGoods proGoods);
+
+    Integer addprojectgoodsapply(GoodsApply goodsApply);
+
+    Integer updategoodsapply(GoodsApply goodsApply);
+
+    Integer updateprogressgoods(ProGoods proGoods);
+
+    ProGoods findprogoods(@Param("id") Integer id);
 }

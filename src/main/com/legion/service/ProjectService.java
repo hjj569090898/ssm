@@ -1,4 +1,6 @@
 package legion.service;
+import legion.entity.GoodsApply;
+import legion.entity.ProGoods;
 import legion.entity.Project;
 import legion.entity.ProjectCount;
 
@@ -21,6 +23,16 @@ public interface ProjectService {
      List listimageurl(Integer projectid);
 
      Integer addimageurl(Integer projectid,String imageurl);
+
+     Integer addprojectgoods(ProGoods proGoods);
+
+     Integer addprojectapply(GoodsApply goodsApply);
+
+     Integer updategoodsapply(GoodsApply goodsApply);
+
+     Integer updateprogressgoods(ProGoods proGoods);
+
+     ProGoods findprogoods(Integer id);
 
 //    public ArrayList<Project>listGoodsByType(Integer type);
 }

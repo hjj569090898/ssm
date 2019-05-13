@@ -1,6 +1,7 @@
 package legion.dao;
 
 import legion.entity.Goods;
+import legion.entity.GoodsApply;
 import legion.entity.GoodsFlow;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
@@ -27,5 +28,8 @@ public interface GoodsDao {
 
     ArrayList<Goods> listGoodsByType(@Param("type") Integer type);
 
+    ArrayList<GoodsApply> listGoodsApply(@Param("page") Integer page);
+
+    Integer Goodsapplynum();
 
 }

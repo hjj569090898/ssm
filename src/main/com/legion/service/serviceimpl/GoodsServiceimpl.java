@@ -2,6 +2,7 @@ package legion.service.serviceimpl;
 
 import legion.dao.GoodsDao;
 import legion.entity.Goods;
+import legion.entity.GoodsApply;
 import legion.entity.GoodsFlow;
 import legion.service.GoodsService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,5 +53,15 @@ public class GoodsServiceimpl implements GoodsService {
     @Override
     public ArrayList<GoodsFlow> listGoodsflow(Integer page) {
         return goodsDao.listGoodsflow(page);
+    }
+
+    @Override
+    public ArrayList<GoodsApply> listGoodsApply(Integer page) {
+        return goodsDao.listGoodsApply(page);
+    }
+
+    @Override
+    public Integer goodsapplynum() {
+        return goodsDao.Goodsapplynum();
     }
 }

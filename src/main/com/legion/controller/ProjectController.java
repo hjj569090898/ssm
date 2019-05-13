@@ -1,14 +1,19 @@
 package legion.controller;
 
 import com.alibaba.fastjson.JSONObject;
+import legion.entity.Finance;
 import legion.entity.Project;
 import legion.entity.ProjectCount;
+import legion.service.FinanceService;
 import legion.service.ProjectService;
 import legion.util.DateUtil;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 @CrossOrigin
 @RestController
@@ -16,6 +21,10 @@ import java.util.ArrayList;
 public class ProjectController {
     @Resource
     private ProjectService projectService;
+    @Resource
+    private FinanceService financeService;
+
+
     @RequestMapping(value = "/project/{id}",method = RequestMethod.GET)
     public ArrayList AProject(@PathVariable Integer id){
         ArrayList<Project> list = new ArrayList<>();
@@ -41,8 +50,35 @@ public class ProjectController {
     }
 
     @RequestMapping(value ="/project",method = RequestMethod.PATCH)
-    public Integer updateProject(@RequestBody Project project){
-        return projectService.updateProject(project);
+    public JSONObject updateProject(@RequestBody Project project){
+        JSONObject object = new JSONObject();
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+        Date startday = new Date();
+        String nowtime = format.format(startday);
+        String state = project.getPnow();
+        if(state=="已验收"||state.equals("已验收")) {
+            if (projectService.updateProject(project) == 0) {
+                throw new RuntimeException();
+            }
+            Finance finance = new Finance();
+            finance.setAdmin(project.getLeader());
+            finance.setDate(nowtime);
+            finance.setDescs("工程编号：" + project.getId() + "的验收结算");
+            finance.setMoney(project.getMoney() + 0.0);
+            finance.setType("合同结算");
+
+            if (financeService.addFinance(finance) == 0) {
+                throw new RuntimeException();
+            }
+            object.put("code", 1);
+        }
+        else{
+            if (projectService.updateProject(project) == 0) {
+                throw new RuntimeException();
+            }
+        }
+        object.put("code",2);
+        return  object;
     }
 
     @RequestMapping(value = "/project/{id}",method = RequestMethod.DELETE)
@@ -104,5 +140,13 @@ public class ProjectController {
         return  obj;
     }
 
+    @RequestMapping(value = "/pimage",method = RequestMethod.GET)
+    public JSONObject Listimage(
+            @RequestParam(value = "projectid")Integer projectid){
+        JSONObject object = new JSONObject();
+         List list = projectService.listimageurl(projectid);
+        object.put("imageurl",list);
+        return object;
+    }
 
 }

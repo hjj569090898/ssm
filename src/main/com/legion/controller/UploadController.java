@@ -21,14 +21,15 @@ public class UploadController {
     @Resource
     private ProjectService projectService;
 
-    @PostMapping("/avatar")
+    @RequestMapping(value = "/avatar/{username}")
     @ResponseBody
-    public Map upload(MultipartFile file, HttpServletRequest request,@RequestParam(value = "username" )String username){
+    public Map upload(MultipartFile file, HttpServletRequest request,@PathVariable String username){
         Map<String,Object> map  =new HashMap<String, Object>();
         try{
-            String path = request.getSession().getServletContext().getRealPath("\\avatar\\");
-            String path2 = "C:\\legion\\src\\assets\\pimage";
-            String image = UploadUtil.avatarupload(file,path2,username);
+//            String path = request.getSession().getServletContext().getRealPath("\\avatar\\");
+            String path = "D:\\vue1\\vuelegion\\src\\assets\\avatar";
+//            "D:\\vue1\\\vuelegion\\src\\assets\\avatar"
+            String image = UploadUtil.avatarupload(file,path,username);
 
             map.put("code",0);
             map.put("image",image);
@@ -48,11 +49,12 @@ public class UploadController {
 
 
         Map<String,Object> map  =new HashMap<String, Object>();
-        String path = request.getSession().getServletContext().getRealPath("\\progressimage\\");
+//        String path = request.getSession().getServletContext().getRealPath("\\progressimage\\");
         String path2 = "C:\\legion\\static\\image";
+        String path = "D:\\vue1\\vuelegion\\static\\image";
 
         try {
-            String url = "./static/image"+UploadUtil.upload(files, path2, id);
+            String url = "./static/image/"+UploadUtil.upload(files, path, id);
             Integer a = projectService.addimageurl(id,url);
             map.put("code",a);
         }catch (IOException e){

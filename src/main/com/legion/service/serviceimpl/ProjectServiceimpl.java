@@ -1,6 +1,8 @@
 package legion.service.serviceimpl;
 
 import legion.dao.ProjectDao;
+import legion.entity.GoodsApply;
+import legion.entity.ProGoods;
 import legion.entity.Project;
 import legion.entity.ProjectCount;
 import legion.service.ProjectService;
@@ -55,5 +57,30 @@ public class ProjectServiceimpl implements ProjectService {
     @Override
     public Integer addimageurl(Integer projectid, String imageurl) {
         return projectdao.addimageurl(projectid,imageurl);
+    }
+
+    @Override
+    public Integer addprojectgoods(ProGoods proGoods) {
+        return projectdao.addprojectgoodsplan(proGoods);
+    }
+
+    @Override
+    public Integer addprojectapply(GoodsApply goodsApply) {
+        return projectdao.addprojectgoodsapply(goodsApply);
+    }
+
+    @Override
+    public Integer updategoodsapply(GoodsApply goodsApply) {
+        return projectdao.updategoodsapply(goodsApply);
+    }
+
+    @Override
+    public Integer updateprogressgoods(ProGoods proGoods) {
+        return projectdao.updateprogressgoods(proGoods);
+    }
+
+    @Override
+    public ProGoods findprogoods(Integer id) {
+        return projectdao.findprogoods(id);
     }
 }

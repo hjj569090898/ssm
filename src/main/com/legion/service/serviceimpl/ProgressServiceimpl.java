@@ -47,4 +47,14 @@ public class ProgressServiceimpl implements ProgressService {
     public ArrayList<ProGoods> listProgoods(Integer Projectid, Integer page) {
         return progressDao.listProgoods(Projectid, page);
     }
+
+    @Override
+    public Integer newaddgoods(ProGoods proGoods) {
+        return progressDao.newaddgoods(proGoods);
+    }
+
+    @Override
+    public Integer deleteprojectgoods(ProGoods proGoods) {
+        return progressDao.deleteprojectgoods(proGoods);
+    }
 }

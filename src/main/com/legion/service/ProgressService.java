@@ -18,4 +18,8 @@ public interface ProgressService {
 
      ArrayList<ProGoods> listProgoods(Integer Projectid,Integer page);
 //    public ArrayList<Project>listGoodsByType(Integer type);
+
+    Integer  newaddgoods(ProGoods proGoods);
+
+    Integer deleteprojectgoods(ProGoods proGoods);
 }
