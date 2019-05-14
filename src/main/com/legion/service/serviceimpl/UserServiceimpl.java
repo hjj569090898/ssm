@@ -39,6 +39,11 @@ public class UserServiceimpl implements UserService {
     }
 
     @Override
+    public Integer CountUserByGroupid(Integer groupid) {
+        return userDao.CountUserByGroupid(groupid);
+    }
+
+    @Override
     public ArrayList<User> listUser(Integer page) {
         return userDao.listUser(page);
     }
@@ -62,5 +67,10 @@ public class UserServiceimpl implements UserService {
     @Override
     public ArrayList<Userapply> listuserapply(String username) {
         return userDao.listuserapply(username);
+    }
+
+    @Override
+    public Integer countuser() {
+        return userDao.conutuser();
     }
 }

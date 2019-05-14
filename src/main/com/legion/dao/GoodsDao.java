@@ -18,13 +18,17 @@ public interface GoodsDao {
 
     ArrayList<GoodsFlow> listGoodsflow(@Param("page") Integer page);
 
+    Integer goodsflownum();
+
     Integer updateGoods(Goods goods);
 
     Integer deleteGoods(@Param("id") Integer id);
 
     Goods listGoodsById(@Param("id") Integer id);
 
-    ArrayList<Goods> listGoods();
+    Integer goodsnum();
+
+    ArrayList<Goods> listGoods(@Param("page") Integer page);
 
     ArrayList<Goods> listGoodsByType(@Param("type") Integer type);
 

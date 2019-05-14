@@ -26,12 +26,13 @@ public class PermissionController {
     }
 
     @Transactional
-    @RequestMapping(value = "/addpermission",method = RequestMethod.POST)
-    public JSONObject addpermission(@RequestParam("permission") String[] permission,
-                                    @RequestParam(value = "username") String username){
+    @RequestMapping(value = "/addpermission/{username}",method = RequestMethod.POST)
+    public JSONObject addpermission(@RequestParam("permissions") String permissions,
+                                    @PathVariable String username){
         JSONObject obj = new JSONObject();
         User user =userService.listUserByName(username);
         Integer userid = user.getId();
+        String [] permission = permissions.split(",");
         permissionService.deletepermission(userid);
         for(int i=0;i<permission.length;i++)
         {

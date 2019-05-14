@@ -15,13 +15,17 @@ public interface GoodsService {
 
      Goods listGoodsById(Integer Goodsid);
 
-     ArrayList<Goods> listGoods();
+     ArrayList<Goods> listGoods(Integer page);
+
+     Integer goodsnum();
 
      ArrayList<Goods>listGoodsByType(Integer type);
 
      Integer addGoodsflow(Integer goodsid,Integer num, String date,String admin,String descs );
 
      ArrayList<GoodsFlow> listGoodsflow(Integer page);
+
+     Integer goodsflownum();
 
      ArrayList<GoodsApply> listGoodsApply(Integer page);
 

@@ -11,9 +11,13 @@ public interface UserService {
 
     Integer deleteUser(Integer id);
 
+    Integer countuser();
+
     User listUserByName(String username);
 
     ArrayList<User> listUserByGroupid(Integer id,Integer page);
+
+    Integer CountUserByGroupid(Integer groupid);
 
     ArrayList<User> listUser(Integer page);
 

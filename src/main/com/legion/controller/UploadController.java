@@ -27,7 +27,8 @@ public class UploadController {
         Map<String,Object> map  =new HashMap<String, Object>();
         try{
 //            String path = request.getSession().getServletContext().getRealPath("\\avatar\\");
-            String path = "D:\\vue1\\vuelegion\\src\\assets\\avatar";
+//            String path = "D:\\vue1\\vuelegion\\src\\assets\\avatar";
+            String path = "C:\\legion\\src\\assets\\avatar";
 //            "D:\\vue1\\\vuelegion\\src\\assets\\avatar"
             String image = UploadUtil.avatarupload(file,path,username);
 
@@ -54,7 +55,7 @@ public class UploadController {
         String path = "D:\\vue1\\vuelegion\\static\\image";
 
         try {
-            String url = "./static/image/"+UploadUtil.upload(files, path, id);
+            String url = "./static/image/"+UploadUtil.upload(files, path2, id);
             Integer a = projectService.addimageurl(id,url);
             map.put("code",a);
         }catch (IOException e){

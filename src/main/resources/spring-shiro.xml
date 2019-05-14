@@ -62,6 +62,8 @@
         /login/=anon
         /goods/**=statelessAuth,roles[goods] <!-- 仓储拦截-->
         /stockin/**=statelessAuth,roles[stockin] <!-- 入库拦截-->
+        /goodsapply/** = statelessAuth,roles[goodsapply]  <!-- 出库查看，审核-->
+
     </value>
 </property>
 </bean>

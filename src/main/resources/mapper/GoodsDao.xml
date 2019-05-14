@@ -11,12 +11,23 @@
 
     <select id="listGoods" resultType="Goods">
           select * from goods
+          LIMIT #{page},10
+    </select>
+
+
+    <select id="goodsnum" resultType="java.lang.Integer">
+          SELECT count(*) FROM goods
     </select>
 
     <select id="listGoodsflow" resultType="GoodsFlow">
           SELECT * FROM goodsflow
 
            LIMIT #{page},10
+    </select>
+
+
+    <select id="goodsflownum" resultType="java.lang.Integer">
+          SELECT count(*) FROM goodsflow
     </select>
 
     <select id="listGoodsApply" resultType="GoodsApply">

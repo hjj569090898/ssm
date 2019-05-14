@@ -4,18 +4,24 @@ import com.alibaba.fastjson.JSONObject;
 import legion.entity.Auditing;
 import legion.entity.Userapply;
 import legion.service.AuditingService;
+import legion.service.PermissionService;
 import legion.service.UserService;
+
+import java.io.IOException;
 import  java.util.Date;
 import java.text.SimpleDateFormat;
 
+import legion.util.UploadUtil;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
 
 import legion.entity.User;
 import legion.util.JWTUtil;
 import legion.util.PasswordUtil;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.ArrayList;
 
@@ -26,6 +32,8 @@ public class UserController {
     private UserService userService;
     @Resource
     private AuditingService auditingService;
+    @Resource
+    private PermissionService permissionService;
 
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
@@ -70,10 +78,14 @@ public class UserController {
         user.setPassword(mds);
         JSONObject obj = new JSONObject();
         if(userService.addUser(user)==1){
-            obj.put("success","注册成功!");
+            obj.put("code",1);
+            obj.put("username",user.getUsername());
             return obj;
         }
-        obj.put("fali","注册失败!");
+        else {
+            obj.put("code",0);
+        }
+
         return obj;
     }
 
@@ -106,7 +118,7 @@ public class UserController {
         Integer nowpage = 10*(page-1);
         ArrayList List = userService.listUserByGroupid(groupid, nowpage);
         obj.put("user",List);
-        obj.put("length",List.toArray().length);
+        obj.put("length",userService.CountUserByGroupid(groupid));
         return obj;
     }
 
@@ -116,8 +128,17 @@ public class UserController {
         JSONObject obj = new JSONObject();
         Integer nowpage = 10*(page-1);
         obj.put("user",userService.listUser(nowpage));
-        obj.put("length",obj.size());
+        obj.put("length",userService.countuser());
         return obj;
+    }
+
+    @RequestMapping(value = "/deleteuser/{id}", method = RequestMethod.DELETE)
+    public Integer deleteuser(@PathVariable Integer id) {
+        if (userService.deleteUser(id) == 1) {
+            return 1;
+        } else {
+            return 1;
+        }
     }
 
         @RequestMapping(value = "/updateinfo",method = RequestMethod.PATCH)

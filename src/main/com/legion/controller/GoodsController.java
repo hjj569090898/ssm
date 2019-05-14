@@ -36,22 +36,25 @@ public class GoodsController {
 
     @RequestMapping(value = "/goods/type/{type}",method = RequestMethod.GET)
     public ArrayList goodsbytype(@PathVariable Integer type){
-        ArrayList<Goods> list = new ArrayList<>();
-        list = goodsService.listGoodsByType(type);
-        return list;
+
+        return goodsService.listGoodsByType(type);
     }
 
     @RequestMapping(value = "/goodsflow",method = RequestMethod.GET)
-    public ArrayList goodsflow(@RequestParam(value = "page")Integer page){
+    public JSONObject goodsflow(@RequestParam(value = "page")Integer page){
+        JSONObject object = new JSONObject();
         int nowpage = (page-1)*10;
-        ArrayList<GoodsFlow> list = goodsService.listGoodsflow(nowpage);
-        return  list;
+         object.put("goodsflow" ,goodsService.listGoodsflow(nowpage));
+        object.put("length",goodsService.goodsflownum());
+        return  object;
     }
 
     @RequestMapping(value = "/goods",method = RequestMethod.GET)
-    public ArrayList listgood(){
-        ArrayList<Goods> list = goodsService.listGoods();
-        return list;
+    public JSONObject listgoods(@RequestParam(value = "page")Integer page){
+        JSONObject object = new JSONObject();
+        object.put("goods", goodsService.listGoods( (page-1)*10));
+        object.put("length",goodsService.goodsnum());
+        return  object;
     }
 
     @RequestMapping(value = "/goodsapply",method = RequestMethod.GET)
@@ -82,6 +85,7 @@ public class GoodsController {
             goods.setNumber(goods.getNumber()-goodsApply.getApplynum().intValue());
             goods.setLatelynum(-goodsApply.getApplynum().intValue());
             goods.setLatelydate(goodsApply.getDate());
+            goods.setAdmin(goodsApply.getAdmin());
             if(goodsService.updateGoods(goods)==0){
                 throw new RuntimeException();
             }

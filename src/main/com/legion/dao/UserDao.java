@@ -13,9 +13,13 @@ public interface UserDao {
 
     Integer updateUser(User user);
 
+    Integer conutuser();
+
     Integer deleteUser(@Param("id") Integer id);
 
     ArrayList<User> listUserByGroupid(@Param("groupid") Integer id,@Param("page") Integer page);
+
+    Integer CountUserByGroupid(@Param("groupid") Integer groupid);
 
     ArrayList<User> listUser(@Param("page") Integer page);
 

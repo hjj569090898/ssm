@@ -36,8 +36,13 @@ public class GoodsServiceimpl implements GoodsService {
         return goodsDao.listGoodsById(Goodsid);
     }
 
-    public ArrayList<Goods> listGoods(){
-        return goodsDao.listGoods();
+    public ArrayList<Goods> listGoods(Integer page){
+        return goodsDao.listGoods(page);
+    }
+
+    @Override
+    public Integer goodsnum() {
+        return goodsDao.goodsnum();
     }
 
     public ArrayList<Goods> listGoodsByType(Integer type)
@@ -63,5 +68,10 @@ public class GoodsServiceimpl implements GoodsService {
     @Override
     public Integer goodsapplynum() {
         return goodsDao.Goodsapplynum();
+    }
+
+    @Override
+    public Integer goodsflownum() {
+        return goodsDao.goodsflownum();
     }
 }

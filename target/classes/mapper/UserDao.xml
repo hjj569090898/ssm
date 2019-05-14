@@ -19,9 +19,18 @@
            LIMIT #{page},10
     </select>
 
+    <select id="CountUserByGroupid" resultType="java.lang.Integer">
+          select count(*) from user where 1 = 1
+      and groupid  = #{groupid}
+    </select>
+
     <select id="listUser" resultType="User">
           select * from user where 1 = 1
            LIMIT #{page},10
+    </select>
+
+    <select id="conutuser" resultType="java.lang.Integer">
+          select count(*) from user
     </select>
 
 
