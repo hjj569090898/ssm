@@ -11,4 +11,6 @@ public interface AuditingService {
     ArrayList<Auditing> listAuditing(String type,String state,Integer page);
 
     Auditing QueryAuditing (Integer id);
+
+    Integer countListAuditing(String type,String state);
 }

@@ -34,4 +34,9 @@ public class AuditingServiceimpl implements AuditingService {
     public Auditing QueryAuditing(Integer id) {
         return auditingDao.QueryAuditing(id);
     }
+
+    @Override
+    public Integer countListAuditing(String type, String state) {
+        return auditingDao.countListAuditing(type,state);
+    }
 }

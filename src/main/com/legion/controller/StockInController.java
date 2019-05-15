@@ -21,11 +21,19 @@ public class StockInController {
     private AuditingService auditingService;
 
     @RequestMapping(value = "/stockin/{id}",method = RequestMethod.GET)
-    public ArrayList stockinbyid(@PathVariable Integer id){
+    public JSONObject stockinbyid(@PathVariable Integer id){
+        JSONObject object = new JSONObject();
         ArrayList<StockIn> list = new ArrayList<>();
         StockIn stockIn = stockInService.listStockInById(id);
+        if(stockIn == null)
+        {
+            object.put("code",0);
+            return object;
+        }
                 list.add(stockIn);
-                return list;
+        object.put("code",1);
+        object.put("stockin",list);
+                return object;
     }
 
     @RequestMapping(value = "/stockin",method = RequestMethod.GET)

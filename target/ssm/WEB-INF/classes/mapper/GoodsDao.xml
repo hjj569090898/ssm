@@ -8,6 +8,10 @@
         insert into goodsflow(goodsid,num,date,admin,descs) values (#{goodsid},#{num},#{date},#{admin},#{descs})
     </insert>
 
+    <insert id="addGoods" useGeneratedKeys="true" keyProperty="id">
+        insert into goods(name,number,units,type,latelynum,latelydate,admin)
+         values (#{name},#{number},#{units},#{type},#{latelynum},#{latelydate},#{admin})
+    </insert>
 
     <select id="listGoods" resultType="Goods">
           select * from goods

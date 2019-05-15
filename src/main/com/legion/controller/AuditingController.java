@@ -51,7 +51,7 @@ public class AuditingController {
         ArrayList<Auditing> list = auditingService.listAuditing(type,state,10*(page-1));
         JSONObject object = new JSONObject();
         object.put("auditing",list);
-        object.put("length",list.toArray().length);
+        object.put("length",auditingService.countListAuditing(type,state));
         return object;
     }
 
@@ -85,7 +85,7 @@ public class AuditingController {
                 finance.setDescs("申请原因:" + auditing.getReason());
                 StockIn stockIn = stockInService.listStockInById(auditing.getLinked());
                 stockIn.setState("申请通过");
-                //审核通过  1.更新审核单状态------2更新入库订单申请单----3更新财务流水---4更新库存
+                //审核通过  1.更新审核单状态------2更新入库订单申请单----3更新财务流水---4更新库存--5更新库存流水
                 Goods goods = goodsService.listGoodsById(stockIn.getGoodsid());
                 goods.setLatelynum(stockIn.getNum());
                 goods.setLatelydate(auditing.getAdate());
@@ -101,6 +101,7 @@ public class AuditingController {
                         auditing.getAdate(), stockIn.getApplicant(), stockIn.getReason()) == 0) {
                     throw new RuntimeException();
                 }
+
             } else if (state == "不通过" || state.equals("不通过")) {
                 //审核不通过，1更新审核单状态  2 更新入库订单申请
                 Auditing auditing = auditingService.QueryAuditing(id);

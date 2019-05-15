@@ -1,18 +1,18 @@
 package legion.controller;
 
 import com.alibaba.fastjson.JSONObject;
-import legion.entity.Goods;
+import legion.entity.*;
 
-import legion.entity.GoodsApply;
-import legion.entity.GoodsFlow;
-import legion.entity.ProGoods;
+import legion.service.FinanceService;
 import legion.service.GoodsService;
 
 import legion.service.ProjectService;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import javax.annotation.Resource;
 
 
@@ -24,6 +24,8 @@ public class GoodsController {
     private GoodsService goodsService;
     @Resource
     private ProjectService projectService;
+    @Resource
+    private FinanceService financeService;
 
 
     @RequestMapping(value = "/goods/{id}",method = RequestMethod.GET)
@@ -115,10 +117,33 @@ public class GoodsController {
         return obj;
     }
 
-    @RequestMapping(value = "/goods",method = RequestMethod.POST)
-    public Integer addgoods(@RequestBody Goods goods ){
-        return goodsService.addGoods(goods);
-    }
+    @Transactional
+    @RequestMapping(value = "/goods/{money}",method = RequestMethod.POST)
+    public Integer addgoods(@RequestBody Goods goods,@PathVariable double money ){
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+        Date startday = new Date();
+        goods.setLatelynum(goods.getNumber());
+        goods.setLatelydate(format.format(startday));
+        if(goodsService.addGoods(goods)==0){
+            throw new RuntimeException();
+        }
+        Finance finance = new Finance();
+        finance.setMoney(money*goods.getNumber());
+        finance.setDescs("购买"+goods.getName()+":("+goods.getNumber()+"*"+money+")");
+        finance.setDate(format.format(startday));
+        finance.setType("仓储");
+        finance.setAdmin(goods.getAdmin());
+        GoodsFlow goodsFlow = new GoodsFlow();
+        if (financeService.addFinance(finance) == 0) {
+            throw new RuntimeException();
+        }
+
+        else if (goodsService.addGoodsflow(goods.getId(), goods.getNumber(),
+                format.format(startday) , goods.getAdmin(), "商品入仓") == 0) {
+            throw new RuntimeException();
+        }
+        return 1;
+}
 
     @RequestMapping(value ="/goods",method = RequestMethod.PATCH)
     public Integer updategoods(@RequestBody Goods goods){

@@ -37,13 +37,19 @@
 
     <update id="updateProgress" parameterType="Progress">
         update progress set
-            name = #{name},
+            prname = #{prname},
             state = #{state},
-            plan_start = #{plan_start},
-            plan_end = #{plan_start},
-            leader = #{leader},
-            actual_statr = #{actual_statr},
-            actual_end = #{actual_end}
+            planstart = #{planstart},
+            planend = #{planend},
+            admin = #{admin},
+            actualstart = #{actualstart},
+            actualend = #{actualend},
+            plancost = #{plancost},
+            actualcost =#{actualcost},
+            planworking =#{planworking},
+            actualworking =#{actualworking},
+            subcontractcost =#{subcontractcost},
+            date = #{date}
         where
             id= #{id}
     </update>

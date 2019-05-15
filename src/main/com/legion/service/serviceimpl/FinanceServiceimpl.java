@@ -33,8 +33,8 @@ public class FinanceServiceimpl implements FinanceService {
     public ArrayList<Finance> listFinance(String type,Integer page){
         return financeDao.listFinance(type, page);
     }
-    public Integer listallpage()
+    public Integer listallpage(String type)
     {
-        return  financeDao.listallpage();
+        return  financeDao.listallpage(type);
     }
 }

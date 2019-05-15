@@ -63,6 +63,15 @@
         /goods/**=statelessAuth,roles[goods] <!-- 仓储拦截-->
         /stockin/**=statelessAuth,roles[stockin] <!-- 入库拦截-->
         /goodsapply/** = statelessAuth,roles[goodsapply]  <!-- 出库查看，审核-->
+        /goodsflow/** = statelessAuth,roles[goodsflow]     <!-- 库存流水账-->
+        /project/** = statelessAuth,roles[project]<!-- 工程-->
+        /progress/** = statelessAuth,roles[progress]<!-- 任务-->
+        /getuser/** = statelessAuth,roles[getuser]<!-- 查看用户-->
+        /register/** = statelessAuth,roles[register]<!-- 注册-->
+        /deleteuser/** = statelessAuth,roles[deleteuser]<!-- 删除用户-->
+        /addpermission/** = statelessAuth,roles[addpermission] <!-- 修改用户额外权限-->
+        /finance/** = statelessAuth,roles[finance]  <!-- 账单流水-->
+        /auditing/** = statelessAuth,roles[auditing] <!-- 审核-->
 
     </value>
 </property>

@@ -5,6 +5,7 @@ import legion.entity.*;
 
 import  java.util.Date;
 
+import legion.service.FinanceService;
 import legion.service.GoodsService;
 import legion.service.ProgressService;
 import legion.service.ProjectService;
@@ -25,6 +26,8 @@ public class ProgressController {
     private ProjectService projectService;
     @Resource
     private GoodsService goodsService;
+    @Resource
+    private FinanceService financeService;
 
     @RequestMapping(value = "/aprogress",method = RequestMethod.GET)
     public ArrayList AProgress( @RequestParam(value = "id")Integer id,
@@ -151,8 +154,27 @@ public class ProgressController {
     }
 
 
+    @Transactional
     @RequestMapping(value ="/progress",method = RequestMethod.PATCH)
     public Integer updateProgress(@RequestBody Progress progress){
+        String state = progress.getState();
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+        Date startday = new Date();
+        if(state=="已完工"||state.equals("已完工"))
+        {
+            Finance finance = new Finance();
+            finance.setAdmin(progress.getAdmin());
+            finance.setDate(format.format(startday));
+            finance.setDescs("任务编号：" + progress.getId() + "的总支出");
+            finance.setMoney(progress.getActualcost() +progress.getSubcontractcost()); //实际支出加额外支出
+            finance.setType("工程支出");
+            if (financeService.addFinance(finance) == 0) {
+                throw new RuntimeException();
+            }
+
+            progress.getActualcost();
+        }
+        progress.setDate(format.format(startday));
         return progressService.updateProgress(progress);
     }
 

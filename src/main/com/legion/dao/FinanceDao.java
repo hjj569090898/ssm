@@ -16,6 +16,6 @@ public interface FinanceDao {
 
     ArrayList<Finance> listFinance(@Param("type") String type,@Param("page") Integer page);
 
-    Integer listallpage();
+    Integer listallpage(@Param("type") String type);
 
 }

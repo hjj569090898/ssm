@@ -10,6 +10,8 @@ import legion.util.DateUtil;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.math.BigDecimal;
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -60,7 +62,7 @@ public class ProjectController {
             if (projectService.updateProject(project) == 0) {
                 throw new RuntimeException();
             }
-            Finance finance = new Finance();
+            Finance finance = new Finance(); //收款
             finance.setAdmin(project.getLeader());
             finance.setDate(nowtime);
             finance.setDescs("工程编号：" + project.getId() + "的验收结算");
@@ -70,6 +72,7 @@ public class ProjectController {
             if (financeService.addFinance(finance) == 0) {
                 throw new RuntimeException();
             }
+
             object.put("code", 1);
         }
         else{
@@ -151,15 +154,18 @@ public class ProjectController {
         delaystart = DateUtil.getDaySub(project.getActualstart(),project.getPlanstart());  //开工延期时长
         delayend = DateUtil.getDaySub(project.getActualend(),project.getPlanend());       //竣工延期时长
 
-
+//        DecimalFormat df = new DecimalFormat("#.00");
+        BigDecimal   b   =   new BigDecimal(projectCount.getAllpercent());
+        double percent = b.setScale(2,   BigDecimal.ROUND_HALF_UP).doubleValue();
+//        df.format(projectCount.getAllpercent());
 
         all[0] = (double)pday;
         all[1] = projectCount.getPlancost();
         all[2] = projectCount.getPlanworking();
 
-        plan[0] = (double)pday*projectCount.getAllpercent()/100;
-        plan[1] = projectCount.getPlancost()*projectCount.getAllpercent()/100;
-        plan[2] = projectCount.getPlanworking()*projectCount.getAllpercent()/100;
+        plan[0] = (double)pday*percent/100;
+        plan[1] = projectCount.getPlancost()*percent/100;
+        plan[2] = projectCount.getPlanworking()*percent/100;
 
         now[0] =(double)aday;
         now[1] = projectCount.getAccost();
@@ -169,7 +175,7 @@ public class ProjectController {
         obj.put("all",all);
         obj.put("plan",plan);
         obj.put("now",now);
-        obj.put("percent",projectCount.getAllpercent());
+        obj.put("percent",percent);
         obj.put("delaystart",delaystart);
         obj.put("delayend",delayend);
         obj.put("subcost",projectCount.getSubcost());

@@ -16,6 +16,9 @@ public interface AuditingDao {
                    @Param("state") String state, @Param("adate") String adate,
                    @Param("id") Integer id);
 
+    Integer countListAuditing(@Param("type") String type,
+                              @Param("state") String state);
+
     Integer add(Auditing auditing);
 
     Auditing QueryAuditing(@Param("id") Integer id);

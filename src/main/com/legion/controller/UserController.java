@@ -41,14 +41,17 @@ public class UserController {
         JSONObject obj = new JSONObject();
         User isuser = userService.listUserByName(user.getUsername()); //判断用户是否存在
         if (isuser == null) {
+            obj.put("code",0);
             obj.put("result", "不存在该用户！");
             return obj;
         } else if (!PasswordUtil.verify(user.getPassword(),isuser.getPassword()))
         {
+            obj.put("code",0);
             obj.put("result", "username or password is false");
             return obj;
         } else {
             String jwt = JWTUtil.sign(isuser.getUsername(), isuser.getEmail());//自定义JWT
+            obj.put("code",1);
             obj.put("User",isuser.getUsername());
             obj.put("jwt", jwt);
             return obj;
@@ -132,9 +135,11 @@ public class UserController {
         return obj;
     }
 
+
     @RequestMapping(value = "/deleteuser/{id}", method = RequestMethod.DELETE)
     public Integer deleteuser(@PathVariable Integer id) {
-        if (userService.deleteUser(id) == 1) {
+        permissionService.deletepermission(id);
+        if (userService.deleteUser(id) == 1 ) {
             return 1;
         } else {
             return 1;

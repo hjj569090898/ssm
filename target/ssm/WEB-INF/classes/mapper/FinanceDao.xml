@@ -15,7 +15,7 @@
     </select>
 
     <select id="listallpage" resultType="Integer">
-        select COUNT(*) from finance
+        select COUNT(*) from finance where type like #{type}
     </select>
     
     <select id="listFinanceByID" resultType="Finance">

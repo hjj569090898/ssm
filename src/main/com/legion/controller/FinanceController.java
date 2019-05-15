@@ -15,11 +15,21 @@ public class FinanceController {
     @Resource
     private FinanceService financeService;
     @RequestMapping(value = "/finance/{id}",method = RequestMethod.GET)
-    public ArrayList Financebyid(@PathVariable Integer id){
+    public JSONObject Financebyid(@PathVariable Integer id){
+        JSONObject object = new JSONObject();
         ArrayList<Finance> list = new ArrayList<>();
+
         Finance finance = financeService.listFinanceById(id);
-                list.add(finance);
-                return list;
+        if(finance==null)
+        {
+            object.put("code",0);
+            return object;
+        }
+
+        object.put("code",1);
+        list.add(finance);
+        object.put("finance",list);
+                return object;
     }
 
     @RequestMapping(value = "/finance",method = RequestMethod.GET)
@@ -29,13 +39,13 @@ public class FinanceController {
         {
             type = "%%";
         }
-        Integer nowpage = 10*(page-1);
-        ArrayList<Finance> list = financeService.listFinance(type,nowpage);
+        ArrayList<Finance> list = financeService.listFinance(type,10*(page-1));
         JSONObject object = new JSONObject();
         object.put("Fiance",list);
-        object.put("length",list.toArray().length);
+        object.put("length",financeService.listallpage(type));
         return object;
     }
+
     @RequestMapping(value = "/finance",method = RequestMethod.POST)
     public Integer addFinance(@RequestBody Finance finance ){
         return financeService.addFinance(finance);
