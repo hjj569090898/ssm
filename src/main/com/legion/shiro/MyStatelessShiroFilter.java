@@ -22,7 +22,7 @@ public class MyStatelessShiroFilter extends BasicHttpAuthenticationFilter {
         httpServletResponse.setHeader("Access-Control-Allow-Credentials", "true");
         httpServletResponse.setHeader("Access-Control-Allow-Headers",
                 "Origin, X-Requested-With, Content-Type, Accept, authorization");
-        // 跨域时会首先发送一个option请求，这里我们给option请求直接返回正常状态
+        // 跨域时会首先发送一个option请求，option请求直接返回正常状态
         if (httpServletRequest.getMethod().equals(RequestMethod.OPTIONS.name())) {
             httpServletResponse.setStatus(HttpStatus.OK.value());
             return false;

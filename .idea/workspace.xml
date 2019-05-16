@@ -7,57 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="025ba61c-03e1-46c1-886d-f8ea6266248c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/com/legion/controller/AuditingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/com/legion/controller/AuditingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/com/legion/controller/FinanceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/com/legion/controller/FinanceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/com/legion/controller/GoodsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/com/legion/controller/GoodsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/com/legion/controller/PermissionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/com/legion/controller/PermissionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/com/legion/controller/ProgressController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/com/legion/controller/ProgressController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/com/legion/controller/ProjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/com/legion/controller/ProjectController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/com/legion/controller/StockInController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/com/legion/controller/StockInController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/com/legion/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/com/legion/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/com/legion/dao/AuditingDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/com/legion/dao/AuditingDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/com/legion/dao/FinanceDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/com/legion/dao/FinanceDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/com/legion/service/AuditingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/com/legion/service/AuditingService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/com/legion/service/FinanceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/com/legion/service/FinanceService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/com/legion/service/serviceimpl/AuditingServiceimpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/com/legion/service/serviceimpl/AuditingServiceimpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/com/legion/service/serviceimpl/FinanceServiceimpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/com/legion/service/serviceimpl/FinanceServiceimpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/AuditingDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/AuditingDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/FinanceDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/FinanceDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/GoodsDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/GoodsDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/ProgressDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/ProgressDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/spring-shiro.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/spring-shiro.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/legion/controller/AuditingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/legion/controller/AuditingController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/legion/controller/FinanceController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/legion/controller/FinanceController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/legion/controller/ProgressController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/legion/controller/ProgressController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/legion/controller/ProjectController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/legion/controller/ProjectController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/legion/controller/StockInController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/legion/controller/StockInController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/legion/dao/AuditingDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/legion/dao/AuditingDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/legion/dao/FinanceDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/legion/dao/FinanceDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/legion/service/AuditingService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/legion/service/AuditingService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/legion/service/FinanceService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/legion/service/FinanceService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/legion/service/serviceimpl/AuditingServiceimpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/legion/service/serviceimpl/AuditingServiceimpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/legion/service/serviceimpl/FinanceServiceimpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/legion/service/serviceimpl/FinanceServiceimpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/AuditingDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/AuditingDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/FinanceDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/FinanceDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/ProgressDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/ProgressDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/legion/controller/AuditingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/legion/controller/AuditingController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/legion/controller/FinanceController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/legion/controller/FinanceController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/legion/controller/ProgressController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/legion/controller/ProgressController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/legion/controller/ProjectController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/legion/controller/ProjectController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/legion/controller/StockInController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/legion/controller/StockInController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/legion/dao/AuditingDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/legion/dao/AuditingDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/legion/dao/FinanceDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/legion/dao/FinanceDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/legion/service/AuditingService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/legion/service/AuditingService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/legion/service/FinanceService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/legion/service/FinanceService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/legion/service/serviceimpl/AuditingServiceimpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/legion/service/serviceimpl/AuditingServiceimpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/legion/service/serviceimpl/FinanceServiceimpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/legion/service/serviceimpl/FinanceServiceimpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/mapper/AuditingDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/mapper/AuditingDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/mapper/FinanceDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/mapper/FinanceDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/mapper/ProgressDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm/WEB-INF/classes/mapper/ProgressDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/com/legion/shiro/MyStatelessRealm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/com/legion/shiro/MyStatelessRealm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/com/legion/shiro/MyStatelessShiroFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/com/legion/shiro/MyStatelessShiroFilter.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -80,8 +31,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/com/legion/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1710">
-              <caret line="146" column="5" lean-forward="true" selection-start-line="146" selection-start-column="5" selection-end-line="146" selection-end-column="5" />
+            <state relative-caret-position="-108">
+              <caret line="32" column="13" lean-forward="true" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -90,10 +41,28 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/com/legion/shiro/JWTToken.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="253">
+              <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/com/legion/util/JWTUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="299">
+              <caret line="44" column="31" lean-forward="true" selection-start-line="44" selection-start-column="31" selection-end-line="44" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/com/legion/controller/ProjectController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="445">
-              <caret line="174" column="27" selection-start-line="174" selection-start-column="27" selection-end-line="174" selection-end-column="27" />
+            <state relative-caret-position="329">
+              <caret line="155" lean-forward="true" selection-start-line="155" selection-end-line="155" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -104,8 +73,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/com/legion/controller/ProgressController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="46">
-              <caret line="96" column="35" lean-forward="true" selection-start-line="96" selection-start-column="35" selection-end-line="96" selection-end-column="35" />
+            <state relative-caret-position="1840">
+              <caret line="96" column="35" selection-start-line="96" selection-start-column="35" selection-end-line="96" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -113,11 +82,32 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/com/legion/controller/PermissionController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="471">
-              <caret line="43" selection-start-line="43" selection-end-line="43" />
+            <state relative-caret-position="-39">
+              <caret line="33" selection-start-line="33" selection-end-line="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/com/legion/shiro/MyStatelessShiroFilter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-269">
+              <caret line="44" column="6" lean-forward="true" selection-start-line="44" selection-start-column="6" selection-end-line="44" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/com/legion/shiro/MyStatelessRealm.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="167">
+              <caret line="63" column="9" lean-forward="true" selection-start-line="63" selection-start-column="9" selection-end-line="63" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -143,8 +133,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/com/legion/service/PermissionService.java" />
-        <option value="$PROJECT_DIR$/src/main/com/legion/service/serviceimpl/PermissionServiceimpl.java" />
         <option value="$PROJECT_DIR$/src/main/com/legion/entity/Permission.java" />
         <option value="$PROJECT_DIR$/src/main/com/legion/entity/GoodsFlow.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
@@ -194,6 +182,8 @@
         <option value="$PROJECT_DIR$/src/main/resources/spring-shiro.xml" />
         <option value="$PROJECT_DIR$/src/main/com/legion/controller/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/com/legion/controller/PermissionController.java" />
+        <option value="$PROJECT_DIR$/src/main/com/legion/shiro/MyStatelessShiroFilter.java" />
+        <option value="$PROJECT_DIR$/src/main/com/legion/shiro/MyStatelessRealm.java" />
       </list>
     </option>
   </component>
@@ -205,10 +195,10 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="129" />
-    <option name="y" value="65" />
+    <option name="x" value="119" />
+    <option name="y" value="107" />
     <option name="width" value="1670" />
-    <option name="height" value="931" />
+    <option name="height" value="926" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -270,7 +260,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
+              <item name="shiro" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ssm" type="b2602c69:ProjectViewProjectNode" />
@@ -278,30 +268,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="entity" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ssm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ssm" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="serviceimpl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ssm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ssm" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ssm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ssm" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="mapper" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -314,7 +281,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556516646516" />
-    <property name="last_opened_file_path" value="E:/ideaProject/wsoms" />
+    <property name="last_opened_file_path" value="E:/wsoms" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Global Libraries" />
@@ -457,11 +424,12 @@
       <workItem from="1557458029767" duration="16383000" />
       <workItem from="1557797145161" duration="23107000" />
       <workItem from="1557884610469" duration="21360000" />
+      <workItem from="1557969806939" duration="5858000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="172371000" />
+    <option name="totallyTimeSpent" value="178229000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -473,14 +441,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="129" y="65" width="1670" height="931" extended-state="0" />
+    <frame x="119" y="107" width="1670" height="926" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" x="771" y="275" width="457" height="503" id="Project" order="0" sideWeight="0.8331242" visible="true" weight="0.26086956" />
+      <window_info content_ui="combo" x="771" y="275" width="457" height="503" id="Project" order="0" sideWeight="0.8331242" visible="true" weight="0.26397514" />
       <window_info id="Structure" order="1" sideWeight="0.16827853" side_tool="true" weight="0.26149067" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
       <window_info id="UI Designer" order="4" />
-      <window_info id="Favorites" order="5" sideWeight="0.16687578" side_tool="true" visible="true" weight="0.26086956" />
+      <window_info id="Favorites" order="5" sideWeight="0.16687578" side_tool="true" weight="0.26086956" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -573,51 +542,22 @@
           <properties />
           <option name="timeStamp" value="19" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/com/legion/shiro/MyStatelessRealm.java</url>
+          <line>60</line>
+          <properties />
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/com/legion/shiro/MyStatelessRealm.java</url>
+          <line>62</line>
+          <properties />
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/com/legion/entity/ProGoods.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" column="37" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/com/legion/entity/StockOut.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="14" column="28" lean-forward="true" selection-end-line="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/com/legion/util/DateUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" selection-start-line="1" selection-end-line="2" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/com/legion/entity/Userapply.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/com/legion/entity/Pimage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/com/legion/util/UploadUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="828">
@@ -948,20 +888,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/com/legion/controller/UserController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/com/legion/controller/PermissionController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1710">
-          <caret line="146" column="5" lean-forward="true" selection-start-line="146" selection-start-column="5" selection-end-line="146" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="-39">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/shiro/shiro-core/1.4.0/shiro-core-1.4.0-sources.jar!/org/apache/shiro/subject/Subject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="331" column="9" selection-start-line="331" selection-start-column="9" selection-end-line="331" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/com/legion/shiro/JWTToken.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/com/legion/util/JWTUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="44" column="31" lean-forward="true" selection-start-line="44" selection-start-column="31" selection-end-line="44" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/com/legion/controller/ProjectController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="445">
-          <caret line="174" column="27" selection-start-line="174" selection-start-column="27" selection-end-line="174" selection-end-column="27" />
+        <state relative-caret-position="329">
+          <caret line="155" lean-forward="true" selection-start-line="155" selection-end-line="155" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -970,18 +928,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/com/legion/controller/ProgressController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="96" column="35" lean-forward="true" selection-start-line="96" selection-start-column="35" selection-end-line="96" selection-end-column="35" />
+        <state relative-caret-position="1840">
+          <caret line="96" column="35" selection-start-line="96" selection-start-column="35" selection-end-line="96" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/com/legion/controller/PermissionController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/com/legion/shiro/MyStatelessShiroFilter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="471">
-          <caret line="43" selection-start-line="43" selection-end-line="43" />
+        <state relative-caret-position="-269">
+          <caret line="44" column="6" lean-forward="true" selection-start-line="44" selection-start-column="6" selection-end-line="44" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/com/legion/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-108">
+          <caret line="32" column="13" lean-forward="true" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/com/legion/shiro/MyStatelessRealm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="63" column="9" lean-forward="true" selection-start-line="63" selection-start-column="9" selection-end-line="63" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

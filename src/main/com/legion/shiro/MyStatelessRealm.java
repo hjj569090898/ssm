@@ -1,6 +1,8 @@
 package legion.shiro;
 
+import legion.entity.User;
 import legion.service.PermissionService;
+import legion.service.UserService;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;
@@ -23,6 +25,8 @@ public class MyStatelessRealm extends AuthorizingRealm {
 
     @Autowired
     PermissionService permissionService;
+    @Autowired
+    UserService userService;
 
     @Override
     public boolean supports(AuthenticationToken token) {
@@ -52,10 +56,17 @@ public class MyStatelessRealm extends AuthorizingRealm {
         String token = (String) auth.getCredentials();
         // 开始验证token 查看token携带的username是否为null -》 username和数据库中的数据比较 -》校验token
         String username = JWTUtil.getUserFromToken(token);
-        logger.info(username);
-        if (username == null) {
+        User user =userService.listUserByName(username);
+
+        if(!JWTUtil.verify(token,username,user.getEmail()))
+        {
             throw new AuthenticationException("Token invalid");
         }
+//        logger.info(username);
+
+//        if (username == null) {
+//            throw new AuthenticationException("Token invalid");
+//        }
         // 验证用户是否存在
 //        UserBean userBean = userService.getUser(username);
 //        if (userBean == null) {
